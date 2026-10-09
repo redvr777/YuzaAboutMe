@@ -42,10 +42,8 @@ p strong{color:var(--text);font-weight:600}
 .ph.r{aspect-ratio:16/10}
 .ph.has{border-style:solid}
 .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.music{display:flex;gap:24px;align-items:center}
-.music .ph{width:200px;aspect-ratio:1;flex:none}
 footer{padding:40px 0;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
-@media(max-width:640px){.hero .wrap,.music{flex-direction:column;align-items:flex-start}.do,.proj{grid-template-columns:1fr}header a{margin-left:12px}}
+@media(max-width:640px){.hero .wrap{flex-direction:column;align-items:flex-start}.do,.proj{grid-template-columns:1fr}header a{margin-left:12px}}
 </style>
 </head>
 <body>
@@ -85,17 +83,16 @@ footer{padding:40px 0;border-top:1px solid var(--line);color:var(--mute);font-si
 <section id="work"><div class="wrap">
 <h2>Projects</h2>
 <div class="proj">
-<div><div class="ph r" data-img="game1"></div><h3>Game project</h3><p>Describe the game and what you built.</p></div>
-<div><div class="ph r" data-img="game2"></div><h3>Another game</h3><p>A second game or prototype.</p></div>
-<div><div class="ph r" data-img="model1"></div><h3>3D work</h3><p>A model or scene you made.</p></div>
-<div><div class="ph r" data-img="website1"></div><h3>Website</h3><p>A site you designed and built.</p></div>
+<div><div class="ph r" data-img="game1"></div><h3>VR horror game</h3><p>A VR horror game set indoors, where a monster is hunting you and will tear you apart if it catches you.</p></div>
+<div><div class="ph r" data-img="game2"></div><h3>VR martial arts</h3><p>A VR game made for practicing martial arts, so you can train your moves in a virtual space.</p></div>
+<div><div class="ph r" data-img="model1"></div><h3>Space civilization</h3><p>A 3D model of a space civilization built as a place where people live.</p></div>
+<div><div class="ph r" data-img="website1"></div><h3>Game website</h3><p>A website I built for a game I was asked to make.</p></div>
 </div>
 </div></section>
 
 <section id="music"><div class="wrap">
 <h2>Music</h2>
 <div class="music">
-<div class="ph" data-img="music"></div>
 <div>
 <p>Music is a big part of who I am. I listen to a wide mix: <strong>metal, alternative, jazz, classical, EDM, rock and punk.</strong></p>
 </div></div>
@@ -104,7 +101,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);color:var(--mute);font-si
 <section id="contact"><div class="wrap">
 <h2>Contact</h2>
 <p>I'm open to new projects, collaborations, and meeting new people. Message me anywhere:</p>
-<a class="btn f" href="mailto:you@example.com">Email</a><a class="btn" href="https://discord.com/users/YOUR-ID" target="_blank">Discord</a>
+<a class="btn f" href="https://mail.google.com/mail/?view=cm&fs=1&to=yuzadeveloper@gmail.com" target="_blank" rel="noopener">Email me</a><button class="btn" id="dc" type="button" style="background:none;color:inherit;font:inherit;cursor:pointer">Discord: yuza4948</button>
 </div></section>
 
 <footer><div class="wrap">© <span id="yr"></span> Yuza</div></footer>
@@ -119,15 +116,19 @@ const IMAGES = {
   game2:    "https://raw.githubusercontent.com/redvr777/YuzaAboutMe/main/photos/GameScreenShot2.png", // screenshot of another game or prototype
   model1:   "https://raw.githubusercontent.com/redvr777/YuzaAboutMe/main/photos/3DModelRender.png", // render of a 3D model or scene
   website1: "https://raw.githubusercontent.com/redvr777/YuzaAboutMe/main/photos/WebsiteScreenShot.png", // screenshot of a website you built
-  music:    "", // headphones, instrument, concert, or album art (square)
 };
-const LABELS = {avatar:"Your photo",game1:"Game screenshot",game2:"Game screenshot #2",model1:"3D model render",website1:"Website screenshot",music:"Music photo"};
+const LABELS = {avatar:"Your photo",game1:"Game screenshot",game2:"Game screenshot #2",model1:"3D model render",website1:"Website screenshot"};
 document.querySelectorAll('[data-img]').forEach(el=>{
   const k=el.dataset.img,src=IMAGES[k];
   if(src){const i=new Image();i.alt=LABELS[k];i.src=src;
     i.onload=()=>{el.textContent='';el.classList.add('has');el.appendChild(i)};
     i.onerror=()=>{el.textContent='Image not found'}}
   else el.textContent=LABELS[k];
+});
+document.getElementById('dc').addEventListener('click',function(){
+  const b=this,t=b.textContent;
+  const done=()=>{b.textContent='Copied! yuza4948';setTimeout(()=>b.textContent=t,1800)};
+  if(navigator.clipboard)navigator.clipboard.writeText('yuza4948').then(done,done);else done();
 });
 document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
