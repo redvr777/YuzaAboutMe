@@ -107,15 +107,12 @@ footer{padding:40px 0;border-top:1px solid var(--line);color:var(--mute);font-si
 <footer><div class="wrap">© <span id="yr"></span> Yuza</div></footer>
 
 <script>
-/* PHOTO LINKS: paste a raw GitHub link or a path like "images/me.png" between the quotes.
-   Raw link format: https://raw.githubusercontent.com/USER/REPO/main/images/file.png
-   Leave "" to show the placeholder. */
 const IMAGES = {
-  avatar:   "https://raw.githubusercontent.com/redvr777/YuzaAboutMe/main/photos/Screenshot%202026-09-12%20024013.png", // your portrait or avatar (square)
-  game1:    "https://raw.githubusercontent.com/redvr777/YuzaAboutMe/main/photos/GameScreenShot.png", // screenshot of your best game
-  game2:    "https://raw.githubusercontent.com/redvr777/YuzaAboutMe/main/photos/GameScreenShot2.png", // screenshot of another game or prototype
-  model1:   "https://raw.githubusercontent.com/redvr777/YuzaAboutMe/main/photos/3DModelRender.png", // render of a 3D model or scene
-  website1: "https://raw.githubusercontent.com/redvr777/YuzaAboutMe/main/photos/WebsiteScreenShot.png", // screenshot of a website you built
+  avatar:   "https://raw.githubusercontent.com/redvr777/YuzaAboutMe/main/photos/Screenshot%202026-09-12%20024013.png",
+  game1:    "https://raw.githubusercontent.com/redvr777/YuzaAboutMe/main/photos/GameScreenShot.png",
+  game2:    "https://raw.githubusercontent.com/redvr777/YuzaAboutMe/main/photos/GameScreenShot2.png",
+  model1:   "https://raw.githubusercontent.com/redvr777/YuzaAboutMe/main/photos/3DModelRender.png",
+  website1: "https://raw.githubusercontent.com/redvr777/YuzaAboutMe/main/photos/WebsiteScreenShot.png",
 };
 const LABELS = {avatar:"Your photo",game1:"Game screenshot",game2:"Game screenshot #2",model1:"3D model render",website1:"Website screenshot"};
 document.querySelectorAll('[data-img]').forEach(el=>{
